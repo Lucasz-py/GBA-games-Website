@@ -1,0 +1,32 @@
+.footer {
+    width: 100%;
+    background-color: white;
+    border-top: 2px solid #000;
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.footer-text {
+    font-size: 14px;
+    color: #000;
+    font-weight: 400;
+}
+
+.footer-link {
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}
+
+.footer-link:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+}
