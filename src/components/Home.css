@@ -1,11 +1,10 @@
 .home {
     width: 100%;
     /* Ajusta este cálculo si la altura de tu header/footer cambia */
-    min-height: calc(100vh - 120px);
+    min-height: calc(101.05vh - 120px);
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #250e42;
     position: relative;
     /* Necesario para posicionar los GIFs de forma absoluta */
     overflow: hidden;
@@ -30,6 +29,15 @@
     font-family: 'Early GameBoy', monospace;
     text-transform: uppercase;
     letter-spacing: 2px;
+    text-shadow:
+        3px 3px 0 #000,
+        -3px -3px 0 #000,
+        3px -3px 0 #000,
+        -3px 3px 0 #000,
+        3px 0px 0 #000,
+        0px 3px 0 #000,
+        -3px 0px 0 #000,
+        0px -3px 0 #000;
 }
 
 /* --- BOTÓN ESTILO RETRO --- */

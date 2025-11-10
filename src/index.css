@@ -17,6 +17,9 @@
 html,
 body {
   height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
   /* Asegura que la base ocupe toda la pantalla */
 }
 
@@ -27,7 +30,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* Usamos el mismo color de fondo oscuro que tu header/emulador para evitar líneas blancas si algo falla */
-  background-color: #250e42;
+  background-color: #ffffff;
   overscroll-behavior: none;
 }
 

@@ -1,0 +1,12 @@
+/* src/components/ui/ColorBends.css */
+.color-bends-container {
+    position: absolute;
+    /* CAMBIO CLAVE: absolute para que quede detrás */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    /* Detrás de todo el contenido de Home */
+}

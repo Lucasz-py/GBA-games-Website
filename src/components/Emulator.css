@@ -2,7 +2,7 @@
     width: 100%;
     /* IMPORTANTE: Usamos una altura fija calculada para que ocupe EXACTAMENTE el espacio restante.
        Ajusta los '120px' si tu header+footer miden más o menos. */
-    height: calc(100vh - 120px);
+    height: calc(101.02vh - 120px);
     min-height: 0;
     /* Evita que valores por defecto lo hagan más alto */
     padding: 0;
