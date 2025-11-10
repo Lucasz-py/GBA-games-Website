@@ -46,8 +46,14 @@ const Catalog = () => {
         {
             id: 'Dragon Ball Advanced Adventure',
             title: 'Dragon Ball: Advanced Adventure',
-            video: '',
+            video: 'db.mp4',
             romFile: '/roms/db.gba',
+        },
+        {
+            id: 'Pokemon Mundo Misterioso',
+            title: 'Pokemon Mundo Misterioso',
+            video: 'pokemon-mundo.mp4',
+            romFile: '/roms/pokemon-mundo.gba',
         }
     ]
 
@@ -56,22 +62,57 @@ const Catalog = () => {
         {
             id: 'Pokemon Islas Doradas',
             title: 'Pokemon Islas Doradas',
-            video: '',
+            video: 'pkmn-islas.mp4',
             romFile: '/roms/islas-doradas.gba'
         },
         {
             id: 'Pokemon Memories',
             title: 'Pokemon Memories',
-            video: '',
+            video: 'pkmn-memories.mp4',
             romFile: '/roms/pokemon-memories.gba'
         },
         {
             id: 'Pokemon Gaia',
             title: 'Pokemon Gaia',
-            video: '',
+            video: 'pkmn-gaia.mp4',
             romFile: '/roms/poke-gaia.gba'
-        }
-        // Agrega aquí tus Hack Roms cuando los tengas
+        },
+        {
+            id: 'Pokemon Black Dark',
+            title: 'Pokemon Black Dark',
+            video: 'pkmn-black-dark.mp4',
+            romFile: '/roms/pkmn-black-dark.gba'
+        },
+        {
+            id: 'Pokemon Light Platinum',
+            title: 'Pokemon Light Platinum',
+            video: 'pkmn-platinum.mp4',
+            romFile: '/roms/pkmn-light-platinum.gba'
+        },
+        {
+            id: 'Pokemon Ash Gray',
+            title: 'Pokemon Ash Gray',
+            video: 'pkmn-ash.mp4',
+            romFile: '/roms/pkmn-ash-gray.gba'
+        },
+        {
+            id: 'Pokemon Mystical',
+            title: 'Pokemon Mystical',
+            video: 'pkmn-mystical.mp4',
+            romFile: '/roms/pkmn-mystical.gba'
+        },
+        {
+            id: 'Pokemon Heroes',
+            title: 'Pokemon Heroes',
+            video: 'pkmn-heroes.mp4',
+            romFile: '/roms/pkmn-heroes.gba'
+        },
+        {
+            id: 'Pokemon Liquid Crystal',
+            title: 'Pokemon Liquid Crystal',
+            video: 'pkmn-crystal.mp4',
+            romFile: '/roms/pkmn-liquid-crystal.gba'
+        },
     ]
 
     const handleGameClick = (game: Game) => {
