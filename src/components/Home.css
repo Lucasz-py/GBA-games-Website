@@ -1,22 +1,28 @@
 .home {
     width: 100%;
-    /* Ajusta este valor si tu header/footer cambian de altura */
+    /* Ajusta este cálculo si la altura de tu header/footer cambia */
     min-height: calc(100vh - 120px);
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #250e42;
+    position: relative;
+    /* Necesario para posicionar los GIFs de forma absoluta */
+    overflow: hidden;
+    /* Evita que un GIF muy grande cause scroll */
 }
 
 .home-content {
     text-align: center;
     padding: 40px 20px;
     max-width: 800px;
+    position: relative;
+    z-index: 2;
+    /* Asegura que texto y botón estén por encima de los GIFs */
 }
 
 .home-title {
     font-size: 40px;
-    /* Ajustado un poco para que no sea tan gigante en pantallas medianas */
     font-weight: 400;
     margin-bottom: 60px;
     color: #ffffff;
@@ -26,52 +32,93 @@
     letter-spacing: 2px;
 }
 
-/* --- BOTÓN ESTILO RETRO (Copiado y adaptado de .game-card) --- */
+/* --- BOTÓN ESTILO RETRO --- */
 .home-button {
     padding: 20px 60px;
     font-size: 20px;
     font-family: 'Early GameBoy', monospace;
-    /* Aplicamos también la fuente retro al botón */
     background-color: white;
     color: black;
     border: 3px solid #000;
     cursor: pointer;
-    /* Transición suave para los efectos de hover/active */
     transition: all 0.2s ease-in-out;
-    /* Sombra sólida inicial */
     box-shadow: 6px 6px 0px #000;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
-/* Efecto al pasar el mouse (Hover): Se levanta un poco y la sombra crece */
 .home-button:hover {
     background-color: #f0f0f0;
-    /* Un gris muy clarito para feedback visual sutil */
     transform: translate(-2px, -2px);
     box-shadow: 8px 8px 0px #000;
 }
 
-/* Efecto al hacer clic (Active): Se hunde y la sombra desaparece */
 .home-button:active {
     transform: translate(4px, 4px);
     box-shadow: 0px 0px 0px #000;
 }
 
+/* --- DECORACIÓN (GIFS) --- */
+.gif-decorations {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    /* Evita que los GIFs bloqueen clics en el fondo */
+    z-index: 1;
+}
+
+.gif-decorations img {
+    position: absolute;
+    /* Tamaño base para ambos GIFs */
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+    bottom: 0;
+    /* Pegados al borde inferior (footer) */
+}
+
+.gif-bottom-left {
+    left: 40px;
+    width: 100px
+}
+
+.gif-bottom-right {
+    right: 40px;
+    /* Si quieres invertir el GIF de la derecha para que mire al centro: */
+    /* transform: scaleX(-1); */
+    width: 200px
+}
+
+/* --- RESPONSIVE (MÓVILES) --- */
 @media (max-width: 768px) {
     .home-title {
         font-size: 24px;
-        /* Reducido para móviles para evitar que ocupe toda la pantalla */
     }
 
     .home-button {
         padding: 15px 40px;
         font-size: 16px;
         box-shadow: 4px 4px 0px #000;
-        /* Sombra un poco más pequeña en móviles */
     }
 
     .home-button:hover {
         box-shadow: 6px 6px 0px #000;
+    }
+
+    /* Ajuste de GIFs para pantallas pequeñas */
+    .gif-decorations img {
+        width: 80px;
+        bottom: 0;
+    }
+
+    .gif-bottom-left {
+        left: 20px;
+    }
+
+    .gif-bottom-right {
+        right: 20px;
     }
 }

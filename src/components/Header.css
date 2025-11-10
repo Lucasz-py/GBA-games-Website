@@ -36,13 +36,25 @@
 .nav-link {
     text-decoration: none;
     color: #ffffff;
-    font-size: 16px;
+    /* Usamos la misma fuente retro */
+    font-family: 'Early GameBoy', monospace;
+    font-size: 14px;
+    /* Un tamaño legible para el menú */
     font-weight: 400;
-    transition: opacity 0.3s ease;
+    /* Las mayúsculas quedan mejor en este estilo */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    /* Un poco de aire para mejorar la lectura */
+    transition: all 0.3s ease;
+    /* Mejora la nitidez */
+    image-rendering: pixelated;
+    -webkit-font-smoothing: none;
 }
 
 .nav-link:hover {
     opacity: 0.7;
+    /* Opcional: un pequeño efecto retro al pasar el mouse */
+    text-shadow: 2px 2px 0px #000;
 }
 
 .account-button {
