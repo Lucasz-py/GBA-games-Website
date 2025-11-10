@@ -11,6 +11,19 @@
     /* Evita que un GIF muy grande cause scroll */
 }
 
+.user-active {
+    background-color: #8a5cff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    border: 2px solid #250e42;
+    /* Un borde oscuro para resaltar */
+}
+
 .home-content {
     text-align: center;
     padding: 40px 20px;
@@ -98,6 +111,28 @@
     /* Si quieres invertir el GIF de la derecha para que mire al centro: */
     /* transform: scaleX(-1); */
     width: 200px
+}
+
+.user-active {
+    background-color: #8a5cff;
+    /* Color de fondo si no hay imagen */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    border: 2px solid #250e42;
+    overflow: hidden;
+    /* Muy importante para que la imagen se recorte en el círculo */
+}
+
+.header-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* La imagen rellenará el círculo sin distorsionarse */
 }
 
 /* --- RESPONSIVE (MÓVILES) --- */

@@ -1,9 +1,10 @@
 import { Routes, Route } from 'react-router-dom'
-import Header from './components/Header'
+// AJUSTA ESTAS RUTAS SI TUS ARCHIVOS ESTÁN EN SUBCARPETAS
+import Header from './components/Header' // ¿Quizás está aquí?
 import Home from './components/Home'
 import Catalog from './components/Catalog'
 import Emulator from './components/Emulator'
-import Footer from './components/Footer'
+import Footer from './components/Footer' // ¿Quizás también moviste Footer a layout?
 import './App.css'
 
 function App() {

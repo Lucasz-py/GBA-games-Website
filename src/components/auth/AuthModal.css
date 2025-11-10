@@ -1,0 +1,294 @@
+/* FONDO BORROSO */
+.auth-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Un poco más oscuro */
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* MODAL (MODO OSCURO) */
+.auth-modal {
+    background-color: #250e42;
+    /* Mismo morado oscuro que la web */
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    font-family: sans-serif;
+    position: relative;
+    color: white;
+    /* Texto blanco por defecto */
+    border: 2px solid #000;
+    /* Borde retro opcional */
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    border: none;
+    background: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #aaa;
+    transition: color 0.2s;
+}
+
+.close-button:hover {
+    color: #fff;
+}
+
+.auth-title {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #ffffff;
+    font-family: 'Early GameBoy', monospace;
+    /* Fuente retro para títulos */
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+/* FORMULARIO */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.auth-input {
+    padding: 12px;
+    background-color: #190124;
+    /* Fondo muy oscuro para inputs */
+    border: 2px solid #444;
+    border-radius: 8px;
+    font-size: 16px;
+    color: white;
+    /* Texto blanco al escribir */
+    transition: border-color 0.3s;
+}
+
+.auth-input:focus {
+    border-color: #8a5cff;
+    outline: none;
+}
+
+.auth-submit {
+    background-color: #8a5cff;
+    /* Morado brillante para acción principal */
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-family: 'Early GameBoy', monospace;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.auth-submit:hover {
+    background-color: #9e7aff;
+}
+
+.auth-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.auth-toggle {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.auth-toggle span {
+    color: #8a5cff;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.auth-toggle span:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: #ff6b6b;
+    background-color: rgba(255, 107, 107, 0.1);
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* --- PERFIL Y AVATAR --- */
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-avatar-large {
+    width: 120px;
+    height: 120px;
+    background-color: #190124;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    color: white;
+    border: 4px solid #8a5cff;
+    /* Borde morado brillante */
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    /* Necesario para los elementos absolutos dentro (imagen, overlay) */
+}
+
+.profile-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.3s ease;
+    /* Transición suave para el borroso */
+}
+
+/* OVERLAY DEL LÁPIZ (Inicialmente oculto) */
+.avatar-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fondo semitransparente oscuro */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    /* Invisible por defecto */
+    transition: opacity 0.3s ease;
+}
+
+/* Icono del lápiz (usando un emoji simple por ahora, puedes usar un icono SVG si prefieres) */
+.avatar-overlay::after {
+    content: '✏️';
+    /* Emoji de lápiz */
+    font-size: 30px;
+}
+
+/* EFECTO HOVER: Mostrar overlay y desenfocar imagen */
+.profile-avatar-large:hover .avatar-overlay {
+    opacity: 1;
+    /* Hacer visible el overlay */
+}
+
+.profile-avatar-large:hover .profile-avatar-img {
+    filter: blur(3px);
+    /* Desenfocar la imagen de fondo */
+}
+
+.profile-username {
+    font-size: 24px;
+    color: #ffffff;
+    margin: 10px 0 5px 0;
+    font-family: 'Early GameBoy', monospace;
+}
+
+.profile-email {
+    color: #aaa;
+    margin: 0;
+    font-size: 14px;
+}
+
+/* BOTÓN CERRAR SESIÓN (Color pedido: #190124) */
+.logout-button {
+    margin-top: 25px;
+    background-color: #190124;
+    /* Color solicitado */
+    color: #ffffff;
+    /* Letra blanca para contraste */
+    border: 2px solid #8a5cff;
+    /* Borde para que destaque sobre el fondo oscuro */
+    padding: 12px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Early GameBoy', monospace;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+}
+
+.logout-button:hover {
+    background-color: #8a5cff;
+    border-color: #190124;
+}
+
+/* MENSAJE DE ÉXITO (TOAST SIMPLE) */
+.success-message {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4ade80;
+    /* Verde éxito */
+    color: #064e3b;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+    animation: fadeInOut 3s forwards;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+    }
+
+    10% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+
+    90% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -20px);
+    }
+}
