@@ -11,8 +11,8 @@ interface Game {
 const Catalog = () => {
     const navigate = useNavigate()
 
-    // Aquí irás agregando tus juegos
-    const games: Game[] = [
+    // Array para juegos oficiales
+    const officialGames: Game[] = [
         {
             id: 'pokemon-rojo-fuego',
             title: 'Pokemon Rojo Fuego',
@@ -39,16 +39,39 @@ const Catalog = () => {
         },
         {
             id: 'zelda-minish-cap',
-            title: 'Zelda the Minish cap',
+            title: 'Zelda: the Minish cap',
             video: 'zelda-minish.mp4',
             romFile: '/roms/zelda-minish.gba',
         },
         {
-            id: 'proximamente-2',
-            title: 'Proximamente...',
+            id: 'Dragon Ball Advanced Adventure',
+            title: 'Dragon Ball: Advanced Adventure',
             video: '',
-            romFile: ''
+            romFile: '/roms/db.gba',
         }
+    ]
+
+    // Nuevo array para Hack Roms
+    const hackRoms: Game[] = [
+        {
+            id: 'Pokemon Islas Doradas',
+            title: 'Pokemon Islas Doradas',
+            video: '',
+            romFile: '/roms/islas-doradas.gba'
+        },
+        {
+            id: 'Pokemon Memories',
+            title: 'Pokemon Memories',
+            video: '',
+            romFile: '/roms/pokemon-memories.gba'
+        },
+        {
+            id: 'Pokemon Gaia',
+            title: 'Pokemon Gaia',
+            video: '',
+            romFile: '/roms/poke-gaia.gba'
+        }
+        // Agrega aquí tus Hack Roms cuando los tengas
     ]
 
     const handleGameClick = (game: Game) => {
@@ -57,36 +80,48 @@ const Catalog = () => {
         }
     }
 
+    // Función auxiliar para renderizar una grid de juegos (para no repetir código)
+    const renderGameGrid = (gamesList: Game[]) => (
+        <div className="games-grid">
+            {gamesList.map((game) => (
+                <div
+                    key={game.id}
+                    className={`game-card ${!game.romFile ? 'disabled' : ''}`}
+                    onClick={() => handleGameClick(game)}
+                >
+                    <div className="game-media-container">
+                        {game.video ? (
+                            <video
+                                src={game.video}
+                                className="game-video"
+                                muted
+                                loop
+                                autoPlay
+                                playsInline
+                            />
+                        ) : (
+                            <div className="placeholder-media">?</div>
+                        )}
+                    </div>
+                    <p className="game-title">{game.title}</p>
+                </div>
+            ))}
+        </div>
+    )
+
     return (
         <div className="catalog">
             <div className="catalog-container">
+                {/* SECCIÓN 1: CATÁLOGO OFICIAL */}
                 <h1 className="catalog-title">catalogo</h1>
-                <div className="games-grid">
-                    {games.map((game) => (
-                        <div
-                            key={game.id}
-                            className={`game-card ${!game.romFile ? 'disabled' : ''}`}
-                            onClick={() => handleGameClick(game)}
-                        >
-                            <div className="game-media-container">
-                                {game.video ? (
-                                    <video
-                                        src={game.video}
-                                        className="game-video"
-                                        muted
-                                        loop
-                                        autoPlay
-                                        playsInline // Importante para que funcione bien en móviles
-                                    />
-                                ) : (
-                                    // Fallback por si no hay video (ej. "Próximamente")
-                                    <div className="placeholder-media">?</div>
-                                )}
-                            </div>
-                            <p className="game-title">{game.title}</p>
-                        </div>
-                    ))}
-                </div>
+                {renderGameGrid(officialGames)}
+
+                {/* Separador opcional si quieres más espacio entre secciones */}
+                <div style={{ height: '40px' }}></div>
+
+                {/* SECCIÓN 2: HACK ROMS */}
+                <h1 className="catalog-title">hack roms</h1>
+                {renderGameGrid(hackRoms)}
             </div>
         </div>
     )
