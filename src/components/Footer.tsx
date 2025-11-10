@@ -5,7 +5,7 @@ const Footer = () => {
         <footer className="footer">
             <div className="footer-container">
                 <p className="footer-text">
-                    dev by{' '}
+                    Dev by{' '}
                     <a
                         href="https://github.com/Lucasz-py"
                         target="_blank"

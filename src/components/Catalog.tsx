@@ -4,7 +4,7 @@ import './Catalog.css'
 interface Game {
     id: string
     title: string
-    image: string
+    video: string
     romFile: string
 }
 
@@ -15,32 +15,38 @@ const Catalog = () => {
     const games: Game[] = [
         {
             id: 'pokemon-rojo-fuego',
-            title: 'Pokémon Rojo Fuego',
-            image: '/pokemon-rojo-fuego.png',
+            title: 'Pokemon Rojo Fuego',
+            video: '/pokemon-rojo-fuego.mp4',
             romFile: '/roms/pokemon-rojo-fuego.gba'
         },
         {
             id: 'pokemon-esmeralda',
-            title: 'Pokémon Esmeralda',
-            image: '/pokemon-esmeralda.png',
+            title: 'Pokemon Esmeralda',
+            video: '/pokemon-esmeralda.mp4',
             romFile: '/roms/pokemon-esmeralda.gba'
         },
         {
             id: 'pokemon-rubi',
-            title: 'Pokémon Rubí',
-            image: '/pokemon-rubi.png',
+            title: 'Pokemon Rubi',
+            video: '/pokemon-rubi.mp4',
             romFile: '/roms/pokemon-rubi.gba'
         },
         {
             id: 'pokemon-zafiro',
-            title: 'Pokémon Zafiro',
-            image: '/pokemon-zafiro.png',
+            title: 'Pokemon Zafiro',
+            video: '/pokemon-zafiro.mp4',
             romFile: '/roms/pokemon-zafiro.gba',
+        },
+        {
+            id: 'zelda-minish-cap',
+            title: 'Zelda the Minish cap',
+            video: 'zelda-minish.mp4',
+            romFile: '/roms/zelda-minish.gba',
         },
         {
             id: 'proximamente-2',
             title: 'Proximamente...',
-            image: '/cs2.png',
+            video: '',
             romFile: ''
         }
     ]
@@ -55,8 +61,6 @@ const Catalog = () => {
         <div className="catalog">
             <div className="catalog-container">
                 <h1 className="catalog-title">catalogo</h1>
-                <h2 className="catalog-subtitle">Pokemon</h2>
-
                 <div className="games-grid">
                     {games.map((game) => (
                         <div
@@ -64,15 +68,20 @@ const Catalog = () => {
                             className={`game-card ${!game.romFile ? 'disabled' : ''}`}
                             onClick={() => handleGameClick(game)}
                         >
-                            <div className="game-image-container">
-                                <img
-                                    src={game.image}
-                                    alt={game.title}
-                                    className="game-image"
-                                    onError={(e) => {
-                                        (e.target as HTMLImageElement).src = '/placeholder.png'
-                                    }}
-                                />
+                            <div className="game-media-container">
+                                {game.video ? (
+                                    <video
+                                        src={game.video}
+                                        className="game-video"
+                                        muted
+                                        loop
+                                        autoPlay
+                                        playsInline // Importante para que funcione bien en móviles
+                                    />
+                                ) : (
+                                    // Fallback por si no hay video (ej. "Próximamente")
+                                    <div className="placeholder-media">?</div>
+                                )}
                             </div>
                             <p className="game-title">{game.title}</p>
                         </div>

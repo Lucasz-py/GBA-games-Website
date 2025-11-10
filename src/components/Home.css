@@ -1,10 +1,11 @@
 .home {
     width: 100%;
+    /* Ajusta este valor si tu header/footer cambian de altura */
     min-height: calc(100vh - 120px);
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f5f5f5;
+    background-color: #250e42;
 }
 
 .home-content {
@@ -14,35 +15,63 @@
 }
 
 .home-title {
-    font-size: 48px;
+    font-size: 40px;
+    /* Ajustado un poco para que no sea tan gigante en pantallas medianas */
     font-weight: 400;
     margin-bottom: 60px;
-    color: #000;
-    line-height: 1.3;
+    color: #ffffff;
+    line-height: 1.4;
+    font-family: 'Early GameBoy', monospace;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
+/* --- BOTÓN ESTILO RETRO (Copiado y adaptado de .game-card) --- */
 .home-button {
-    padding: 15px 60px;
-    font-size: 18px;
+    padding: 20px 60px;
+    font-size: 20px;
+    font-family: 'Early GameBoy', monospace;
+    /* Aplicamos también la fuente retro al botón */
     background-color: white;
-    border: 2px solid #000;
+    color: black;
+    border: 3px solid #000;
     cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 400;
+    /* Transición suave para los efectos de hover/active */
+    transition: all 0.2s ease-in-out;
+    /* Sombra sólida inicial */
+    box-shadow: 6px 6px 0px #000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
+/* Efecto al pasar el mouse (Hover): Se levanta un poco y la sombra crece */
 .home-button:hover {
-    background-color: #000;
-    color: white;
+    background-color: #f0f0f0;
+    /* Un gris muy clarito para feedback visual sutil */
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0px #000;
+}
+
+/* Efecto al hacer clic (Active): Se hunde y la sombra desaparece */
+.home-button:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0px #000;
 }
 
 @media (max-width: 768px) {
     .home-title {
-        font-size: 32px;
+        font-size: 24px;
+        /* Reducido para móviles para evitar que ocupe toda la pantalla */
     }
 
     .home-button {
-        padding: 12px 40px;
+        padding: 15px 40px;
         font-size: 16px;
+        box-shadow: 4px 4px 0px #000;
+        /* Sombra un poco más pequeña en móviles */
+    }
+
+    .home-button:hover {
+        box-shadow: 6px 6px 0px #000;
     }
 }

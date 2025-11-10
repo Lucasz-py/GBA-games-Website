@@ -1,7 +1,23 @@
+/* Definición de la fuente personalizada */
+@font-face {
+  font-family: 'Early GameBoy';
+  src: url('/fonts/EarlyGameBoy.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  /* Asegura que la base ocupe toda la pantalla */
 }
 
 body {
@@ -10,9 +26,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f5f5f5;
+  /* Usamos el mismo color de fondo oscuro que tu header/emulador para evitar líneas blancas si algo falla */
+  background-color: #250e42;
+  overscroll-behavior: none;
 }
 
+/* Hacemos que la app raíz sea un contenedor flexible que ocupe TODA la pantalla */
 #root {
   min-height: 100vh;
   display: flex;

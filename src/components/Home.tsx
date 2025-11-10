@@ -12,11 +12,11 @@ const Home = () => {
         <div className="home">
             <div className="home-content">
                 <h1 className="home-title">
-                    Juega los mejores titulos de la GameBoy Advanced
+                    Play the best games for GameBoy Advance
                 </h1>
 
                 <button className="home-button" onClick={handleStart}>
-                    Comenzar
+                    Start
                 </button>
             </div>
         </div>

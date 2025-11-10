@@ -1,8 +1,8 @@
 .header {
     width: 100%;
-    background-color: white;
-    border-bottom: 2px solid #000;
-    padding: 15px 0;
+    background-color: #400a58;
+    border-bottom: 1px solid #000;
+    padding: 10px 0;
 }
 
 .header-container {
@@ -20,9 +20,11 @@
 }
 
 .logo {
-    height: 30px;
-    width: auto;
+    height: 50px;
+    width: 50px;
     cursor: pointer;
+    /* Agrega esta línea. Prueba con valores como 1.5, 1.8, 2.0 hasta que te guste el tamaño */
+    transform: scale(1.8);
 }
 
 .nav-container {
@@ -33,7 +35,7 @@
 
 .nav-link {
     text-decoration: none;
-    color: #000;
+    color: #ffffff;
     font-size: 16px;
     font-weight: 400;
     transition: opacity 0.3s ease;
@@ -56,11 +58,11 @@
 .circle {
     width: 40px;
     height: 40px;
-    border: 2px solid #000;
+    border: 2px solid #ffffff;
     border-radius: 50%;
     transition: background-color 0.3s ease;
 }
 
 .account-button:hover .circle {
-    background-color: #f0f0f0;
+    background-color: #0602ff;
 }

@@ -9,17 +9,17 @@ const Header = () => {
                 <div className="logo-container">
                     {/* Usamos <a> para forzar recarga limpia */}
                     <a href="/">
-                        <img src="/logogba.png" alt="Logo GBA" className="logo" />
+                        <img src="/logo2.gif" alt="Logo GBA" className="logo" />
                     </a>
                 </div>
 
                 <nav className="nav-container">
                     {/* Estos enlaces ahora "matarán" el emulador al 100% al hacer clic */}
                     <a href="/" className="nav-link">
-                        inicio
+                        Home
                     </a>
                     <a href="/catalogo" className="nav-link">
-                        catalogo
+                        Catalog
                     </a>
                     <button className="account-button" title="Cuenta">
                         <div className="circle"></div>

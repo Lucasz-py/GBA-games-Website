@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap');
+
 .footer {
     width: 100%;
-    background-color: white;
-    border-top: 2px solid #000;
-    padding: 20px 0;
+    background-color: #400a58;
+    border-top: 2px solid #000000;
+    padding: 10px 0;
     margin-top: auto;
+    font-family: 'Pixelify Sans', sans-serif;
 }
 
 .footer-container {
@@ -14,19 +17,22 @@
 }
 
 .footer-text {
-    font-size: 14px;
-    color: #000;
-    font-weight: 400;
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 600;
+    font-family: 'Pixelify Sans', sans-serif;
 }
 
 .footer-link {
-    color: #000;
+    color: #41c3ff;
     text-decoration: none;
     font-weight: 500;
     transition: opacity 0.3s ease;
+    font-family: 'Pixelify Sans', sans-serif;
 }
 
 .footer-link:hover {
     opacity: 0.7;
     text-decoration: underline;
+    font-family: 'Pixelify Sans', sans-serif;
 }

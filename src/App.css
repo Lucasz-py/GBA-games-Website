@@ -1,5 +1,11 @@
+/* Hacemos que el contenido principal crezca para ocupar todo el espacio disponible.
+   Esto es lo que "empuja" el footer hacia abajo y elimina la línea blanca. */
 .main-content {
     flex: 1;
+    /* Factor de crecimiento: 1 (ocupa todo lo que sobra) */
     width: 100%;
-    min-height: calc(100vh - 120px);
+    /* Asegura ancho completo */
+    display: flex;
+    flex-direction: column;
+    /* Ya no necesitamos min-height calculado aquí porque flex: 1 lo maneja mejor automáticamente */
 }
