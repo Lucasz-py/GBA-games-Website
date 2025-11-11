@@ -58,7 +58,7 @@ const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
             }
             onClose()
         } catch (err: any) {
-            setError(err.message || 'Error en la autenticación')
+            setError(err.message || 'Error en la autenticacion')
         } finally {
             setLoading(false)
         }
@@ -119,7 +119,7 @@ const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
 
                 {user ? (
                     <div className="profile-container">
-                        {/* Label que actúa como botón de upload */}
+                        {/* Label que actúa como boton de upload */}
                         <label htmlFor="avatar-upload" className="profile-avatar-large">
                             {avatarUrl ? (
                                 <img src={avatarUrl} alt="Avatar" className="profile-avatar-img" />
@@ -151,7 +151,7 @@ const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
                         {error && <p className="error-message">{error}</p>}
 
                         <button className="logout-button" onClick={() => { signOut(); onClose(); }}>
-                            Cerrar Sesión
+                            Cerrar Sesion
                         </button>
 
                         {/* Mensaje de éxito flotante */}
@@ -159,7 +159,7 @@ const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
                     </div>
                 ) : (
                     <>
-                        <h2 className="auth-title">{isLoginView ? 'Iniciar Sesión' : 'Crear Cuenta'}</h2>
+                        <h2 className="auth-title">{isLoginView ? 'Iniciar Sesion' : 'Crear Cuenta'}</h2>
                         {error && <p className="error-message">{error}</p>}
                         <form className="auth-form" onSubmit={handleAuth}>
                             {!isLoginView && (
@@ -169,7 +169,7 @@ const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
                                 />
                             )}
                             <input
-                                type="email" placeholder="Correo electrónico" className="auth-input"
+                                type="email" placeholder="Correo electronico" className="auth-input"
                                 value={email} onChange={(e) => setEmail(e.target.value)} required
                             />
                             <input
@@ -183,7 +183,7 @@ const AuthModal = ({ isOpen, onClose }: AuthModalProps) => {
                         <p className="auth-toggle">
                             {isLoginView ? '¿No tienes cuenta?' : '¿Ya tienes cuenta?'}
                             <span onClick={() => setIsLoginView(!isLoginView)}>
-                                {isLoginView ? 'Regístrate' : 'Inicia sesión'}
+                                {isLoginView ? 'Regístrate' : 'Inicia sesion'}
                             </span>
                         </p>
                     </>
