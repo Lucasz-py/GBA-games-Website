@@ -33,7 +33,7 @@ const Header = () => {
 
                         <button
                             className="account-button"
-                            title={user ? `Cuenta: ${user.user_metadata.username || user.email}` : "Iniciar Sesión"}
+                            title={user ? `Account: ${user.user_metadata.username || user.email}` : "Login"}
                             onClick={() => setIsModalOpen(true)}
                         >
                             {user ? (
@@ -48,7 +48,7 @@ const Header = () => {
                             ) : (
                                 // --- ARREGLO AQUÍ: Vista si NO está logueado ---
                                 <div className="circle">
-                                    <img src="/nouser.png" alt="Iniciar Sesión" />
+                                    <img src="/nouser.png" alt="Login" />
                                 </div>
                             )}
                         </button>

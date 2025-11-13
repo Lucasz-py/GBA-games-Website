@@ -259,6 +259,17 @@
     align-items: center;
 }
 
+/* --- NUEVO: Estilo para slots vacíos --- */
+.save-item.empty-slot {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-style: dashed;
+}
+
+.save-item.empty-slot .save-date {
+    color: #666;
+    font-style: italic;
+}
+
 .save-info {
     display: flex;
     flex-direction: column;
@@ -305,6 +316,123 @@
 .save-actions button.delete-btn:hover {
     background-color: #ff7a94;
 }
+
+/* --- NUEVO: Estilo para botón de "Save Here" --- */
+.save-actions button.save-new-btn {
+    background-color: #31a46c;
+    /* Verde */
+}
+
+.save-actions button.save-new-btn:hover {
+    background-color: #4ade80;
+}
+
+
+/* --- MODAL DE CONFIRMACIÓN (BORRADO) --- */
+.confirm-modal {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    background-color: #190124;
+    border: 2px solid #ff5c7a;
+    /* Borde rojo */
+    border-radius: 8px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1002;
+    /* Encima del otro modal */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.3s ease-out;
+    color: white;
+    font-family: sans-serif;
+}
+
+.confirm-modal .confirm-title {
+    font-family: 'Early GameBoy', monospace;
+    font-size: 16px;
+    color: #ff5c7a;
+    /* Título en rojo */
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.confirm-modal p {
+    color: #ccc;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+.confirm-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.confirm-btn {
+    flex: 1;
+    background-color: #8a5cff;
+    border: 2px solid #000;
+    color: white;
+    padding: 12px;
+    border-radius: 4px;
+    font-family: 'Early GameBoy', monospace;
+    font-size: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-transform: uppercase;
+}
+
+.confirm-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.confirm-btn.delete-btn {
+    background-color: #ff5c7a;
+    border-color: #000;
+}
+
+.confirm-btn.delete-btn:hover {
+    background-color: #ff7a94;
+}
+
+.confirm-btn.cancel-btn {
+    background-color: #444;
+    border-color: #000;
+}
+
+.confirm-btn.cancel-btn:hover {
+    background-color: #666;
+}
+
+/* --- NUEVO: Estilos para el modal de SOBRESCRITURA --- */
+.confirm-modal.save {
+    border-color: #8a5cff;
+    /* Borde morado */
+}
+
+.confirm-modal.save .confirm-title {
+    color: #8a5cff;
+    /* Título morado */
+}
+
+.confirm-btn.save-btn {
+    background-color: #31a46c;
+    /* Verde */
+    border-color: #000;
+}
+
+.confirm-btn.save-btn:hover {
+    background-color: #4ade80;
+}
+
 
 /* Scrollbar */
 .save-menu::-webkit-scrollbar {
@@ -363,5 +491,9 @@
     .login-prompt-card::after {
         right: 25px;
         /* Ajuste móvil para la flecha */
+    }
+
+    .confirm-modal {
+        padding: 20px;
     }
 }
