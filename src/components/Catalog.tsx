@@ -66,10 +66,10 @@ const Catalog = () => {
             romFile: '/roms/islas-doradas.gba'
         },
         {
-            id: 'Pokemon Memories',
-            title: 'Pokemon Memories',
-            video: 'pkmn-memories.mp4',
-            romFile: '/roms/pokemon-memories.gba'
+            id: 'Pokemon dark worship',
+            title: 'Pokemon Dark Worship',
+            video: 'pkmn-dark-worship.mp4',
+            romFile: '/roms/pokemon-dark-worship.gba'
         },
         {
             id: 'Pokemon Gaia',
@@ -113,6 +113,12 @@ const Catalog = () => {
             video: 'pkmn-crystal.mp4',
             romFile: '/roms/pkmn-liquid-crystal.gba'
         },
+        {
+            id: 'Pokemon Memories',
+            title: 'Pokemon Memories',
+            video: 'pkmn-memories.mp4',
+            romFile: '/roms/pokemon-memories.gba'
+        },
     ]
 
     const handleGameClick = (game: Game) => {
@@ -154,7 +160,7 @@ const Catalog = () => {
         <div className="catalog">
             <div className="catalog-container">
                 {/* SECCIÓN 1: CATÁLOGO OFICIAL */}
-                <h1 className="catalog-title">catalogo</h1>
+                <h1 className="catalog-title">catalog</h1>
                 {renderGameGrid(officialGames)}
 
                 {/* Separador opcional si quieres más espacio entre secciones */}

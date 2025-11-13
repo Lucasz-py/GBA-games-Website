@@ -1,15 +1,14 @@
 // src/components/layout/Header.tsx
-import { useState, useEffect } from 'react' // <--- Añadir useEffect
+import { useState, useEffect } from 'react'
 import { useAuth } from '../context/AuthContext'
-import AuthModal from './auth/AuthModal'
+import AuthModal from './auth/AuthModal' // Asumiendo que AuthModal está en components/layout/auth
 import './Header.css'
 
 const Header = () => {
     const [isModalOpen, setIsModalOpen] = useState(false)
     const { user } = useAuth()
-    const [avatarUrl, setAvatarUrl] = useState<string | null>(null) // Estado para la URL del avatar en el header
+    const [avatarUrl, setAvatarUrl] = useState<string | null>(null)
 
-    // Al cargar el componente o cambiar el usuario, actualizamos la URL del avatar
     useEffect(() => {
         if (user && user.user_metadata.avatar_url) {
             setAvatarUrl(user.user_metadata.avatar_url)
@@ -38,6 +37,7 @@ const Header = () => {
                             onClick={() => setIsModalOpen(true)}
                         >
                             {user ? (
+                                // --- Vista si está logueado ---
                                 <div className="circle user-active">
                                     {avatarUrl ? (
                                         <img src={avatarUrl} alt="Avatar" className="header-avatar-img" />
@@ -46,7 +46,10 @@ const Header = () => {
                                     )}
                                 </div>
                             ) : (
-                                <div className="circle"></div>
+                                // --- ARREGLO AQUÍ: Vista si NO está logueado ---
+                                <div className="circle">
+                                    <img src="/nouser.png" alt="Iniciar Sesión" />
+                                </div>
                             )}
                         </button>
                     </nav>

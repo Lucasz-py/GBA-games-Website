@@ -6,9 +6,10 @@
 }
 
 .header-container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 20px;
+    /* AJUSTE: Más padding a los lados para empujar todo */
+    padding: 0 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,7 +24,6 @@
     height: 50px;
     width: 50px;
     cursor: pointer;
-    /* Agrega esta línea. Prueba con valores como 1.5, 1.8, 2.0 hasta que te guste el tamaño */
     transform: scale(1.8);
 }
 
@@ -36,24 +36,18 @@
 .nav-link {
     text-decoration: none;
     color: #ffffff;
-    /* Usamos la misma fuente retro */
     font-family: 'Early GameBoy', monospace;
     font-size: 14px;
-    /* Un tamaño legible para el menú */
     font-weight: 400;
-    /* Las mayúsculas quedan mejor en este estilo */
     text-transform: uppercase;
     letter-spacing: 1px;
-    /* Un poco de aire para mejorar la lectura */
     transition: all 0.3s ease;
-    /* Mejora la nitidez */
     image-rendering: pixelated;
     -webkit-font-smoothing: none;
 }
 
 .nav-link:hover {
     opacity: 0.7;
-    /* Opcional: un pequeño efecto retro al pasar el mouse */
     text-shadow: 2px 2px 0px #000;
 }
 
@@ -73,8 +67,39 @@
     border: 2px solid #ffffff;
     border-radius: 50%;
     transition: background-color 0.3s ease;
+    /* NUEVO: Asegura que las imágenes de dentro se corten */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    /* Color de fondo si la imagen falla */
+}
+
+/* NUEVO: Estilo para la imagen dentro del círculo */
+.circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Rellena el círculo */
 }
 
 .account-button:hover .circle {
-    background-color: #0602ff;
+    background-color: #8a5cff;
+}
+
+/* Estilo para el avatar del usuario logueado */
+.user-active {
+    background-color: #000000;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    border: 2px solid #250e42;
+}
+
+.header-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

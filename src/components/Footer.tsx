@@ -14,6 +14,15 @@ const Footer = () => {
                     >
                         Lucasz-py
                     </a>
+                    {' & Emulator: '}
+                    <a
+                        href="https://github.com/EmulatorJS/EmulatorJS"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="footer-link"
+                    >
+                        EmulatorJS
+                    </a>
                 </p>
             </div>
         </footer>
