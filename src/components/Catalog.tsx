@@ -15,25 +15,25 @@ const Catalog = () => {
     const officialGames: Game[] = [
         {
             id: 'pokemon-rojo-fuego',
-            title: 'Pokemon Rojo Fuego',
+            title: 'Pokemon Fire Red',
             video: '/pokemon-rojo-fuego.mp4',
             romFile: '/roms/pokemon-rojo-fuego.gba'
         },
         {
             id: 'pokemon-esmeralda',
-            title: 'Pokemon Esmeralda',
+            title: 'Pokemon Emerald',
             video: '/pokemon-esmeralda.mp4',
             romFile: '/roms/pokemon-esmeralda.gba'
         },
         {
             id: 'pokemon-rubi',
-            title: 'Pokemon Rubi',
+            title: 'Pokemon Ruby',
             video: '/pokemon-rubi.mp4',
             romFile: '/roms/pokemon-rubi.gba'
         },
         {
             id: 'pokemon-zafiro',
-            title: 'Pokemon Zafiro',
+            title: 'Pokemon Sapphire',
             video: '/pokemon-zafiro.mp4',
             romFile: '/roms/pokemon-zafiro.gba',
         },
@@ -51,7 +51,7 @@ const Catalog = () => {
         },
         {
             id: 'Pokemon Mundo Misterioso',
-            title: 'Pokemon Mundo Misterioso',
+            title: 'Pokemon Mystery Dungeon',
             video: 'pokemon-mundo.mp4',
             romFile: '/roms/pokemon-mundo.gba',
         }
