@@ -83,42 +83,42 @@ const Catalog = () => {
             video: 'pkmn-black-dark.mp4',
             romFile: '/roms/pkmn-black-dark.gba'
         },
-        {
-            id: 'Pokemon Light Platinum',
-            title: 'Pokemon Light Platinum',
-            video: 'pkmn-platinum.mp4',
-            romFile: '/roms/pkmn-light-platinum.gba'
-        },
-        {
-            id: 'Pokemon Ash Gray',
-            title: 'Pokemon Ash Gray',
-            video: 'pkmn-ash.mp4',
-            romFile: '/roms/pkmn-ash-gray.gba'
-        },
-        {
-            id: 'Pokemon Mystical',
-            title: 'Pokemon Mystical',
-            video: 'pkmn-mystical.mp4',
-            romFile: '/roms/pkmn-mystical.gba'
-        },
-        {
-            id: 'Pokemon Heroes',
-            title: 'Pokemon Heroes',
-            video: 'pkmn-heroes.mp4',
-            romFile: '/roms/pkmn-heroes.gba'
-        },
-        {
-            id: 'Pokemon Liquid Crystal',
-            title: 'Pokemon Liquid Crystal',
-            video: 'pkmn-crystal.mp4',
-            romFile: '/roms/pkmn-liquid-crystal.gba'
-        },
-        {
-            id: 'Pokemon Memories',
-            title: 'Pokemon Memories',
-            video: 'pkmn-memories.mp4',
-            romFile: '/roms/pokemon-memories.gba'
-        },
+        //{
+        //    id: 'Pokemon Light Platinum',
+        //    title: 'Pokemon Light Platinum',
+        //    video: 'pkmn-platinum.mp4',
+        //    romFile: '/roms/pkmn-light-platinum.gba'
+        //},
+        //{
+        //    id: 'Pokemon Ash Gray',
+        //   title: 'Pokemon Ash Gray',
+        //    video: 'pkmn-ash.mp4',
+        //    romFile: '/roms/pkmn-ash-gray.gba'
+        //},
+        //{
+        //    id: 'Pokemon Mystical',
+        //    title: 'Pokemon Mystical',
+        //    video: 'pkmn-mystical.mp4',
+        //    romFile: '/roms/pkmn-mystical.gba'
+        //},
+        //{
+        //    id: 'Pokemon Heroes',
+        //    title: 'Pokemon Heroes',
+        //    video: 'pkmn-heroes.mp4',
+        //   romFile: '/roms/pkmn-heroes.gba'
+        //},
+        //{
+        //    id: 'Pokemon Liquid Crystal',
+        //    title: 'Pokemon Liquid Crystal', 
+        //    video: 'pkmn-crystal.mp4',
+        //    romFile: '/roms/pkmn-liquid-crystal.gba'
+        //},
+        //{
+        //    id: 'Pokemon Memories',
+        //    title: 'Pokemon Memories',
+        //    video: 'pkmn-memories.mp4',
+        //    romFile: '/roms/pokemon-memories.gba'
+        //},
     ]
 
     const handleGameClick = (game: Game) => {

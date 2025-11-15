@@ -356,14 +356,6 @@ const Emulator = () => {
                                                     >
                                                         🗑️
                                                     </button>
-                                                    <button
-                                                        onClick={() => handleSaveClick(save.save_slot)}
-                                                        disabled={loading}
-                                                        className="save-overwrite-btn"
-                                                        title="Overwrite this slot"
-                                                    >
-                                                        Overwrite
-                                                    </button>
                                                 </>
                                             ) : (
                                                 <button
