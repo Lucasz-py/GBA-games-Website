@@ -1,13 +1,15 @@
-// src/components/layout/Header.tsx
 import { useState, useEffect } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
-import AuthModal from './auth/AuthModal' // Asumiendo que AuthModal está en components/layout/auth
+import AuthModal from './auth/AuthModal'
 import './Header.css'
 
 const Header = () => {
     const [isModalOpen, setIsModalOpen] = useState(false)
     const { user } = useAuth()
     const [avatarUrl, setAvatarUrl] = useState<string | null>(null)
+    const location = useLocation()
+    const navigate = useNavigate()
 
     useEffect(() => {
         if (user && user.user_metadata.avatar_url) {
@@ -17,19 +19,45 @@ const Header = () => {
         }
     }, [user])
 
+    // Función para navegar con limpieza del emulador
+    const handleNavigation = (path: string, e: React.MouseEvent<HTMLAnchorElement>) => {
+        e.preventDefault()
+
+        // Si estamos en la página del emulador, forzar recarga completa
+        if (location.pathname.includes('/emulator/')) {
+            console.log('Saliendo del emulador, forzando recarga...')
+            window.location.href = path
+        } else {
+            // Navegación normal con React Router
+            navigate(path)
+        }
+    }
+
     return (
         <>
             <header className="header">
                 <div className="header-container">
                     <div className="logo-container">
-                        <a href="/">
+                        <a href="/" onClick={(e) => handleNavigation('/', e)}>
                             <img src="/logo2.gif" alt="Logo GBA" className="logo" />
                         </a>
                     </div>
 
                     <nav className="nav-container">
-                        <a href="/" className="nav-link">Home</a>
-                        <a href="/catalogo" className="nav-link">Catalog</a>
+                        <a
+                            href="/"
+                            className="nav-link"
+                            onClick={(e) => handleNavigation('/', e)}
+                        >
+                            Home
+                        </a>
+                        <a
+                            href="/catalogo"
+                            className="nav-link"
+                            onClick={(e) => handleNavigation('/catalogo', e)}
+                        >
+                            Catalog
+                        </a>
 
                         <button
                             className="account-button"
@@ -37,7 +65,6 @@ const Header = () => {
                             onClick={() => setIsModalOpen(true)}
                         >
                             {user ? (
-                                // --- Vista si está logueado ---
                                 <div className="circle user-active">
                                     {avatarUrl ? (
                                         <img src={avatarUrl} alt="Avatar" className="header-avatar-img" />
@@ -46,7 +73,6 @@ const Header = () => {
                                     )}
                                 </div>
                             ) : (
-                                // --- ARREGLO AQUÍ: Vista si NO está logueado ---
                                 <div className="circle">
                                     <img src="/nouser.png" alt="Login" />
                                 </div>
