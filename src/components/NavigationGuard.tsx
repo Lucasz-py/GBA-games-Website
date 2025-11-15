@@ -1,10 +1,9 @@
 // src/components/NavigationGuard.tsx
 import { useEffect } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 const NavigationGuard = () => {
     const location = useLocation()
-    const navigate = useNavigate()
 
     useEffect(() => {
         const isEmulatorPage = location.pathname.includes('/emulator/')
